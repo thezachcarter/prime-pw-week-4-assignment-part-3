@@ -45,10 +45,10 @@ function listItems( basket ){
   }//end for of loop
 }//end listItems function
 
-console.log( listItems( basket ) );
+listItems( basket );
 
 function empty ( basket ){
-  (basket.length = 0);
+  ( basket.length = 0 );
 }//end empty function
 
 empty( basket );
@@ -75,7 +75,30 @@ console.log( `basket is ${basket}`);
 addItem( 'jalapeno' );
 console.log( `basket is ${basket}`);
 
-console.log( listItems( basket ) );
+listItems( basket );
 
-empty( basket );
+function removeItem( item ) {
+  i = basket.indexOf( item );
+  if (  i !== -1 ){
+    console.log( item + ' removed' );
+    basket.splice( i , 1 );
+  } else {
+    console.log( 'item not found in basket' );
+    return null }//end if else
+}//end function
+
 console.log( `basket is ${basket}`);
+
+removeItem( 'lettuce' );
+
+console.log( `basket is ${basket}`);
+
+removeItem( 'mayo' );
+
+console.log( `basket is ${basket}`);
+
+removeItem( 'peanuts' );
+
+console.log( `basket is ${basket}`);
+
+listItems( basket );
